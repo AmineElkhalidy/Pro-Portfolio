@@ -64,6 +64,7 @@ const Footer = () => {
               value={name}
               name="name"
               onChange={handleChangeInput}
+              required
             />
           </div>
 
@@ -75,6 +76,7 @@ const Footer = () => {
               value={email}
               name="email"
               onChange={handleChangeInput}
+              required
             />
           </div>
 
@@ -85,6 +87,7 @@ const Footer = () => {
               value={message}
               name="message"
               onChange={handleChangeInput}
+              required
             />
           </div>
 
