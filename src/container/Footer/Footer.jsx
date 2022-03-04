@@ -4,6 +4,10 @@ import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 
+import { AiFillGithub } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+
 import "./Footer.scss";
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -51,6 +55,38 @@ const Footer = () => {
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
           <a href="tel: +212 611154307">+212 611154307</a>
+        </div>
+
+        <div className="app__footer-card">
+          <div className="app__footer-social">
+            <div>
+              <a
+                href="https://www.facebook.com/amine.elkhalidy.73/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://github.com/AmineElkhalidy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://wa.me/212611154307"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsWhatsapp />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
