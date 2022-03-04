@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { images } from "../../constants";
 import Typical from "react-typical";
 import "./Header.scss";
+
 import { AppWrap } from "../../wrapper";
 
 const scaleVariants = {

@@ -78,11 +78,7 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              <a
-                href="https://wa.me/212611154307"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://wa.link/576ksc" target="_blank" rel="noreferrer">
                 <BsWhatsapp />
               </a>
             </div>
