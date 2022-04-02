@@ -38,6 +38,16 @@
   }
 }
 
+.app__navbar-link {
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--black-color);
+  gap: 0.25rem;
+}
+
 .app__navbar-links {
   flex: 1;
   display: flex;
