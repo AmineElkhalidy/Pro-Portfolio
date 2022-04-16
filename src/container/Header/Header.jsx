@@ -21,20 +21,20 @@ const Header = () => {
     <div id="home" className="profile__container">
       <div className="profile__parent">
         <div className="profile__details">
-          <div className="profile__details-name">
+          <h2 className="profile__details-name">
             Hello, I am <span>Amine Elkhalidy</span>
-          </div>
+          </h2>
 
           <div className="profile__details-role">
             <h2>
               <Typical
                 loop={Infinity}
                 steps={[
-                  "FrontEnd Web Dev",
+                  "Front-end dev",
                   1200,
-                  "Mobile App Dev",
+                  "React/Next.js Dev",
                   1200,
-                  "React/Next Js Dev",
+                  "React Native Dev",
                   1200,
                 ]}
               />
