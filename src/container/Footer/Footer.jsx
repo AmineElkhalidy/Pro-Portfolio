@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useForm, ValidationError } from "@formspree/react";
+
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
@@ -18,6 +20,8 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [state, handleSubmit] = useForm("mdobayly");
+
   const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
@@ -26,7 +30,7 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmitForm = () => {
     setLoading(true);
 
     const contact = {
@@ -87,17 +91,24 @@ const Footer = () => {
       </div>
 
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <form
+          action="https://formspree.io/f/mdobayly"
+          method="POST"
+          onSubmit={handleSubmit}
+          className="app__footer-form app__flex"
+        >
           <div className="app__flex">
             <input
               className="p-text"
               type="text"
               placeholder="Your Name"
               value={name}
+              id="name"
               name="name"
               onChange={handleChangeInput}
               required
             />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </div>
 
           <div className="app__flex">
@@ -106,9 +117,15 @@ const Footer = () => {
               type="email"
               placeholder="Your Email"
               value={email}
+              id="email"
               name="email"
               onChange={handleChangeInput}
               required
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
           </div>
 
@@ -117,16 +134,27 @@ const Footer = () => {
               className="p-text"
               placeholder="Your Message"
               value={message}
+              id="message"
               name="message"
               onChange={handleChangeInput}
               required
             />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </div>
 
-          <button type="button" className="p-text" onClick={handleSubmit}>
+          <button
+            type="submit"
+            className="p-text"
+            onClick={handleSubmitForm}
+            disabled={state.submitting}
+          >
             {loading ? "Sending" : "Send Message"}
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">
